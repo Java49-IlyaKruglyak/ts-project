@@ -5,7 +5,7 @@ function shiftCipher(str: string, shift: number = 1): string {
     const maxCode: number = 122;
     shift = shift % 26;
 
-    arr.forEach(e => {                                     // if i do (e: string) it gives me an error
+    arr.forEach((e: string) => {                                 
         let symCode: number = e.charCodeAt(0);
 
         if (symCode >= minCode && symCode <= maxCode) {
@@ -14,7 +14,7 @@ function shiftCipher(str: string, shift: number = 1): string {
                 symCode = minCode + (symCode - maxCode) - 1;
             }
             else if (symCode < minCode) {
-                symCode = maxCode + (minCode - symCode) + 1;
+                symCode = maxCode - (minCode - symCode) + 1;
             }
         }
         result += String.fromCharCode(symCode)
@@ -23,11 +23,11 @@ function shiftCipher(str: string, shift: number = 1): string {
     return result;
 }
 
-console.log(shiftCipher("zzz.", 1));
+console.log(shiftCipher("aaa.", 1));
 
 //===============================================Decipher==================================================
 
 function shiftDecipher(str: string, shift: number = 1): string {
     return shiftCipher(str, -shift);
 }
-console.log(shiftDecipher("aaa.", 1));
+console.log(shiftDecipher("bbb.", 1));
