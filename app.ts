@@ -1,33 +1,9 @@
-function shiftCipher(str: string, shift: number = 1): string {
-    let result: string = "";
-    let arr: string[] = Array.from(str);
-    const minCode: number = 97;
-    const maxCode: number = 122;
-    shift = shift % 26;
-
-    arr.forEach((e: string) => {                                 
-        let symCode: number = e.charCodeAt(0);
-
-        if (symCode >= minCode && symCode <= maxCode) {
-            symCode += shift;
-            if (symCode > maxCode) {
-                symCode = minCode + (symCode - maxCode) - 1;
-            }
-            else if (symCode < minCode) {
-                symCode = maxCode - (minCode - symCode) + 1;
-            }
-        }
-        result += String.fromCharCode(symCode)
-
-    });
-    return result;
-}
-
-console.log(shiftCipher("aaa.", 1));
-
-//===============================================Decipher==================================================
-
-function shiftDecipher(str: string, shift: number = 1): string {
-    return shiftCipher(str, -shift);
-}
-console.log(shiftDecipher("bbb.", 1));
+import { Shape } from "./ShapeInterface";
+import { Rectangle } from "./Rectangle";
+import { Square } from "./Square";
+const shapes: Array<Shape> = [
+    new Rectangle(3, 4),
+    new Square(5)
+];
+const sumOfShapes: number = shapes.reduce((res, cur) => res + cur.getSquare(), 0)
+console.log(sumOfShapes)

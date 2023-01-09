@@ -1,29 +1,11 @@
 "use strict";
-function shiftCipher(str, shift = 1) {
-    let result = "";
-    let arr = Array.from(str);
-    const minCode = 97;
-    const maxCode = 122;
-    shift = shift % 26;
-    arr.forEach((e) => {
-        let symCode = e.charCodeAt(0);
-        if (symCode >= minCode && symCode <= maxCode) {
-            symCode += shift;
-            if (symCode > maxCode) {
-                symCode = minCode + (symCode - maxCode) - 1;
-            }
-            else if (symCode < minCode) {
-                symCode = maxCode - (minCode - symCode) + 1;
-            }
-        }
-        result += String.fromCharCode(symCode);
-    });
-    return result;
-}
-console.log(shiftCipher("aaa.", 1));
-//===============================================Decipher==================================================
-function shiftDecipher(str, shift = 1) {
-    return shiftCipher(str, -shift);
-}
-console.log(shiftDecipher("bbb.", 1));
+Object.defineProperty(exports, "__esModule", { value: true });
+const Rectangle_1 = require("./Rectangle");
+const Square_1 = require("./Square");
+const shapes = [
+    new Rectangle_1.Rectangle(3, 4),
+    new Square_1.Square(5)
+];
+const sumOfShapes = shapes.reduce((res, cur) => res + cur.getSquare(), 0);
+console.log(sumOfShapes);
 //# sourceMappingURL=app.js.map
