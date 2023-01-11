@@ -1,5 +1,5 @@
 import { Shape } from "./ShapeInterface";
-export class Rectangle implements Shape {
+export class Rectangle implements Shape{
     
     constructor(private width: number, private height: number) {
        
