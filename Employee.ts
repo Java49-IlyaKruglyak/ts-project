@@ -27,7 +27,7 @@ export abstract class Employee {
             throw `salary mast be in range [${MIN_SALARY}-${MAX_SALARY}]`
            }
          }
-        abstract  computeSalary(): number;
+        abstract computeSalary(): number;
          
 
 

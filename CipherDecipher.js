@@ -32,8 +32,8 @@ class CipherDecipher {
         return String.fromCharCode(this.minASCII + actualShift);
     }
     mapperDecipher(symb) {
-        const actualShift = (this.maxASCII - symb.charCodeAt(0) + this.shift)
-            % this.nCodes;
+        const actualShift = (this.maxASCII - symb.charCodeAt(0)
+            + this.shift) % this.nCodes;
         return String.fromCharCode(this.maxASCII - actualShift);
     }
 }

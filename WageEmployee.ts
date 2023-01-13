@@ -28,6 +28,6 @@ export class WageEmployee extends Employee{
         }
     }
     computeSalary(): number {
-        return this.basicSalary +  this._hours * this._wage;
-    }
+        return this.basicSalary +  this.hours * this.wage;
+      }
 }

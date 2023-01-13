@@ -32,8 +32,9 @@ export class CipherDecipher {
         return String.fromCharCode(this.minASCII + actualShift);
     }
     private mapperDecipher(symb: string): string{
-        const actualShift: number = (this.maxASCII - symb.charCodeAt(0) + this.shift)
-         % this.nCodes;
+        const actualShift: number = (this.maxASCII - symb.charCodeAt(0)
+         + this.shift) % this.nCodes;
         return String.fromCharCode(this.maxASCII - actualShift);
     }
 }
+

@@ -30,7 +30,7 @@ class WageEmployee extends Employee_1.Employee {
         }
     }
     computeSalary() {
-        return this.basicSalary + this._hours * this._wage;
+        return this.basicSalary + this.hours * this.wage;
     }
 }
 exports.WageEmployee = WageEmployee;
