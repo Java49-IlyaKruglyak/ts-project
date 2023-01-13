@@ -3,6 +3,7 @@ import { Employee } from "./Employee";
 export class Company {
 
     constructor(private _employees: Array<Employee>) {
+
     }
 
     addEmployee(employee: Employee): void {
